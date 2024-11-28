@@ -17,7 +17,7 @@ jobs:
         with:
           args: "deploy --remote-only"
 
-eslint:
+  eslint:
     name: Run ESLint
     runs-on: ubuntu-latest
     steps:
@@ -41,4 +41,3 @@ eslint:
         run: npm run lint
         env:
           CI: true
-
