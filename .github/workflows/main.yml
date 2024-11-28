@@ -1,23 +1,25 @@
-name: Run ESLint
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+name: ESLint
 
-    - name: Installing Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: "20"
+on:
+  push:
+    branches:
+      - '**' # Run on all branches
+  pull_request:
 
-    - name: Installing project dependencies
-      run: npm install
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install ESLint and TypeScript packages
-      run: npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-    - name: Running ESLint
-      run: npm run lint
-      env:
-        CI: true
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npx eslint .
