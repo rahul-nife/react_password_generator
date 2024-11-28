@@ -1,6 +1,6 @@
-app = "pioneering-app-5760"
-github = "https://github.com/nifetency/react_password_generator/archive/refs/heads/main.zip"
-id = "479330a9859d6ec50f66ebf269b7051b02dd07376a72007acb10942a2801c1c667735aa9357ac862218f9cf7d1215b90"
+app = "beautiful-app-7844"
+github = "https://github.com/rahul-nife/react_password_generator/archive/refs/heads/main.zip"
+id = "1783af2d36cbdf390b1eebdffbc3d68a894126ce147519c27b7952580ee47837888ddc79606135b6b7495333cf1f116d"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
