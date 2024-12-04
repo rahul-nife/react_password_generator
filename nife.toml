@@ -1,6 +1,6 @@
-app = "beautiful-app-7844"
+app = "well-made-app-3462"
 github = "https://github.com/rahul-nife/react_password_generator/archive/refs/heads/main.zip"
-id = "1783af2d36cbdf390b1eebdffbc3d68a894126ce147519c27b7952580ee47837888ddc79606135b6b7495333cf1f116d"
+id = "5f1fd17383ca19068d6c56440d7c4c03400d4ebd862461b8187fdd7f74d018c6a32088be52603609c9b4ec3e34febc61"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
