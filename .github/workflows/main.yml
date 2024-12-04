@@ -1,25 +1,43 @@
-name: ESLint
+name: Deploy to Nife
 
 on:
   push:
-    branches:
-      - '**' # Run on all branches
-  pull_request:
 
 jobs:
-  eslint:
+  deploy:
+    name: Deploy proxy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      # This step checks out a copy of your repository.
+      - uses: actions/checkout@v2
+      # This step runs nifectl deploy.
+      - uses: nifetency/nife-actions@2.4
+        env:
+          NIFE_ACCESS_TOKEN: ${{ secrets.NIFE_ACCESS_TOKEN }}
         with:
-          node-version: '20'
+          args: "deploy --remote-only"
 
-      - name: Install dependencies
-        run: npm ci
+eslint:
+  name: Run ESLint
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
-      - name: Run ESLint
-        run: npx eslint .
+    - name: Installing Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: "20"
+
+    - name: Installing project dependencies
+      run: npm install
+
+    - name: Install ESLint and TypeScript packages
+      run: npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+    - name: Running ESLint
+      run: npm run lint
+      env:
+        CI: true
