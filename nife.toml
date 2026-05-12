@@ -1,6 +1,6 @@
-app = "well-made-app-3462"
+app = "fast-spark-3124"
 github = "https://github.com/rahul-nife/react_password_generator/archive/refs/heads/main.zip"
-id = "5f1fd17383ca19068d6c56440d7c4c03400d4ebd862461b8187fdd7f74d018c6a32088be52603609c9b4ec3e34febc61"
+id = "647af9bf3741013f851598723f2c59d29a341b6dff57dd41c4b3e6f66c42c93b880f05e7b54c9ba972420121567ba409"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
@@ -18,7 +18,7 @@ kill_timeout = 5
   http_checks = []
   internal_port = "3000"
   protocol = "tcp"
-  routing_policy = "Latency"
+  routing_policy = "latency"
   script_checks = []
 
   [services.concurrency]
@@ -27,10 +27,8 @@ kill_timeout = 5
     type = "connections"
 
   [services.limits]
-    cpu = "1"
-    memory = "256"
-
-    
+    cpu = "500m"
+    memory = "1Gi"
 
   [[services.ports]]
     handlers = ["http"]
@@ -41,8 +39,8 @@ kill_timeout = 5
     port = 443
 
   [services.requests]
-    cpu = "0.5"
-    memory = "128"
+    cpu = "250m"
+    memory = "512Mi"
 
   [[services.tcp_checks]]
     grace_period = "1s"
