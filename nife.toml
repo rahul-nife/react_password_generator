@@ -1,6 +1,6 @@
-app = "fast-spark-3124"
+app = "smart-app-1160"
 github = "https://github.com/rahul-nife/react_password_generator"
-id = "647af9bf3741013f851598723f2c59d29a341b6dff57dd41c4b3e6f66c42c93b880f05e7b54c9ba972420121567ba409"
+id = "565fbbd2b5f72e8e8ba4bfb03df97eb4c2399d94a23f3f615a57996c93bd12fd1d9bcc6786f20c0a96d2e8aa61fb1a33"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
